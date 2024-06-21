@@ -1,0 +1,43 @@
+.sliderWrapper {
+	width: 900px;
+	overflow: hidden;
+	position: relative;
+}
+.wrapper {
+	img {
+		width: 220px;
+	}
+}
+
+.next {
+	right: 2%;
+}
+
+.prev {
+	left: 2%;
+}
+
+.next,
+.prev {
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+	height: 30px;
+	width: 30px;
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	* {
+		fill: #000;
+	}
+	position: absolute;
+	top: 50%;
+	z-index: 3;
+}
+
+.next:hover,
+.prev:hover {
+	background-color: #f6623e;
+	* {
+		fill: #fff;
+	}
+}

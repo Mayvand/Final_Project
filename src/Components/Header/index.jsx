@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import s from './header.module.scss';
 import { ReactComponent as Cart } from '../../Assets/Cart_icon.svg';
 import { ReactComponent as Login } from '../../Assets/Login_icon.svg';
 import { ReactComponent as Search } from '../../Assets/Search_icon.svg';
 import BaseButton from '../BaseButton';
 import { Outlet } from 'react-router-dom';
-import { useAppSelector } from '../../Hooks/redux';
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import fetchProducts from '../../Store/Actions/getProducts';
 
 const Header = () => {
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(fetchProducts());
+	}, [dispatch]);
+
 	return (
 		<>
 			<header className={s.header}>

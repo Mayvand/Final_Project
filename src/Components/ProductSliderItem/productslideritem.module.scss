@@ -1,0 +1,69 @@
+.itemWrapper {
+	padding: 112px 211px 112px 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 136px;
+	background: transparent;
+
+	.imgWrapper {
+		padding: 90px;
+		border-radius: 100%;
+		background-color: #fef0e7;
+	}
+
+	.infoBlock {
+		h2 {
+			font-family: 'Jost', sans-serif;
+			font-weight: 600;
+			font-size: 50px;
+			line-height: 144%;
+			letter-spacing: 0.06em;
+			width: 770px;
+			margin-bottom: 50px;
+		}
+
+		.priceBlock {
+			display: flex;
+			justify-content: flex-start;
+			gap: 25px;
+			margin-bottom: 33px;
+			span {
+				display: block;
+			}
+
+			.newPrice {
+				font-weight: 600;
+				font-size: 34px;
+				line-height: 59%;
+				color: #f6623e;
+			}
+
+			.oldPrice {
+				font-weight: 500;
+				font-size: 24px;
+				line-height: 83%;
+				text-decoration: line-through;
+				color: #828181;
+			}
+		}
+
+		.description {
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 187%;
+			color: #454545;
+			margin-bottom: 53px;
+			max-width: 700px;
+		}
+
+		.sliderButton {
+			border: 2px solid #f6623e;
+			padding: 15px 30px;
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 156%;
+			text-align: center;
+		}
+	}
+}

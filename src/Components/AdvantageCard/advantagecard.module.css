@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 44px 25px 60px 25px;
+}
+.cardContainer .imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: #fff8f6;
+  border-radius: 20px;
+}
+.cardContainer .imgContainer * {
+  fill: #454545;
+}
+.cardContainer .textContainer {
+  margin-top: 33px;
+}
+.cardContainer .textContainer h1 {
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 113%;
+  text-align: center;
+  color: #000;
+}
+.cardContainer .textContainer p {
+  margin-top: 16px;
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 200%;
+  text-align: center;
+  color: #828181;
+  max-width: 320px;
+}
+
+.cardContainer:hover {
+  background-color: #fff8f6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.cardContainer:hover .imgContainer {
+  background-color: #f6623e;
+}
+.cardContainer:hover .imgContainer * {
+  fill: #fff;
+}/*# sourceMappingURL=advantagecard.module.css.map */

@@ -21,7 +21,7 @@ export const productsSlice = createSlice({
 			.addCase(fetchProducts.fulfilled, (state, action) => {
 				state.loading = false;
 				state.error = null;
-				state.products = action.payload;
+				state.products = action.payload.products;
 				state.hello = 'hello;';
 			})
 			.addCase(fetchProducts.rejected, (state, action) => {

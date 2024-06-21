@@ -3,7 +3,7 @@
 .header .container {
   display: flex;
   max-width: 1920px;
-  padding: 0 120px;
+  padding: 37px 120px;
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;

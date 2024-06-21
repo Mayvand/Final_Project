@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+
+.container {
+  margin-top: 104px;
+}
+
+.presentationTitle {
+  max-width: 410px;
+  margin-left: 1193px;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 146%;
+}
+
+.mainBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 70px;
+  padding: 0 160px;
+  margin-top: 48px;
+  margin-bottom: 262px;
+  overflow-y: visible;
+}
+.mainBlock .backgroundBlock {
+  position: absolute;
+  top: -23%;
+  left: 0;
+  width: 55%;
+  height: 146%;
+  border-radius: 0 0 200px 0;
+  z-index: -1;
+  background: #fff8f6 url(../../Assets/FlowerBackground.svg) no-repeat;
+  background-position: 0 0;
+}
+.mainBlock .textBlock {
+  padding: 132px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 73px;
+}
+.mainBlock .textBlock div {
+  width: 257px;
+}
+.mainBlock .textBlock h3 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 129%;
+}
+.mainBlock .textBlock p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 156%;
+  color: #828181;
+}
+.mainBlock .descriptionBlock {
+  padding-top: 132px;
+}
+.mainBlock .descriptionBlock p {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: #828181;
+  margin-bottom: 30px;
+}
+.mainBlock .descriptionBlock .button {
+  border: 2px solid #f6623e;
+  padding: 16px 38px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 156%;
+  text-align: center;
+  margin-top: 50px;
+}/*# sourceMappingURL=presentationsection.module.css.map */
