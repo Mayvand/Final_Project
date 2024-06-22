@@ -5,3 +5,17 @@
 	padding: 0;
 	position: relative;
 }
+
+.badj {
+	width: 20px;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	background: #f6623e;
+	border-radius: 100%;
+	position: absolute;
+	top: -15px;
+	right: -15px;
+}

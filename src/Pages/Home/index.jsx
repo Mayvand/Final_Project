@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import fetchProducts from '../../Store/Actions/getProducts';
 import { useEffect } from 'react';
 import OurProducts from '../../Components/OurProducts';
+import PhotosBlock from '../../Components/PhotosBlock';
+import s from './home.module.scss';
+import Footer from '../../Components/Footer';
 
 const Home = () => {
 	const dispatch = useDispatch();
@@ -25,6 +28,8 @@ const Home = () => {
 					<PresentationSection />
 					<ProductSlider />
 					<OurProducts />
+					<PhotosBlock />
+					<Footer />
 				</>
 			)}
 		</>

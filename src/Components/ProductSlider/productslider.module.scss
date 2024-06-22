@@ -4,13 +4,12 @@
 	height: 905px;
 	border-radius: 0 0 0 200px;
 	background-color: #fff8f6;
+	max-width: 1920px;
 
 	.swiper-slide {
 		text-align: center;
 		font-size: 18px;
 		background: #967e7e;
-		height: 100px;
-
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -29,7 +28,7 @@
 
 		.swiper-pagination-bullet-active {
 			color: #fff;
-			background: #007aff;
+			background: #f6623e;
 		}
 	}
 }

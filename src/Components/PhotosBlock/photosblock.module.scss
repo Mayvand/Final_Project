@@ -1,0 +1,30 @@
+.container {
+	margin-top: 122px;
+	padding: 0 120px 90px 120px;
+	background: linear-gradient(to bottom, #fff 50%, #fff8f6 50%);
+
+	.imgContainer {
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		gap: 42px;
+		height: 373px;
+
+		.item {
+			height: 308px;
+		}
+
+		.item:nth-child(odd) {
+			align-self: flex-end;
+		}
+	}
+
+	.title {
+		margin-top: 71px;
+		font-weight: 600;
+		font-size: 70px;
+		line-height: 60%;
+		color: #f6633e32;
+		text-align: center;
+	}
+}

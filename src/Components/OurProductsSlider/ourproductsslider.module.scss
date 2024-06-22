@@ -10,11 +10,11 @@
 }
 
 .next {
-	right: 2%;
+	right: 2px;
 }
 
 .prev {
-	left: 2%;
+	left: 2px;
 }
 
 .next,
@@ -32,6 +32,7 @@
 	position: absolute;
 	top: 50%;
 	z-index: 3;
+	background-color: #fff;
 }
 
 .next:hover,

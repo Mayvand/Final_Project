@@ -5,10 +5,12 @@ import { ReactComponent as Login } from '../../Assets/Login_icon.svg';
 import { ReactComponent as Search } from '../../Assets/Search_icon.svg';
 import BaseButton from '../BaseButton';
 import { Outlet } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import fetchProducts from '../../Store/Actions/getProducts';
 
 const Header = () => {
+	const { cart } = useSelector(state => state.cart);
+
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -35,7 +37,11 @@ const Header = () => {
 					<div className={s.icons}>
 						<BaseButton className={s.Search} icon={<Search />} />
 						<BaseButton className={s.Login} icon={<Login />} />
-						<BaseButton className={s.Cart} icon={<Cart />} />
+						<BaseButton
+							className={s.Cart}
+							icon={<Cart />}
+							counter={cart.length}
+						/>
 					</div>
 				</div>
 			</header>

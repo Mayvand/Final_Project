@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import style from './basebutton.module.scss';
 
 const BaseButton = props => {
-	const { className, onClick, value, icon, disabled, type } = props;
+	const { className, onClick, value, icon, disabled, type, counter } = props;
 
 	const mainClass = classNames(className, style.button);
 
@@ -15,6 +15,9 @@ const BaseButton = props => {
 			disabled={disabled}
 		>
 			{value ? value : icon}
+			{counter !== undefined ? (
+				<div className={style.badj}>{counter}</div>
+			) : null}
 		</button>
 	);
 };
