@@ -30,16 +30,23 @@
 			gap: 70px;
 			list-style-type: none;
 			li {
-				font-family: 'Jost', sans-serif;
-				font-weight: 400;
-				font-size: 18px;
-				line-height: 133%;
-				transition: 0.3s;
-			}
+				a {
+					font-family: 'Jost', sans-serif;
+					font-weight: 400;
+					font-size: 18px;
+					line-height: 133%;
+					transition: 0.3s ease-in-out;
+					text-decoration: none;
 
-			li:hover {
-				color: #f6623e;
-				cursor: pointer;
+					&:hover {
+						color: #f6623e !important;
+						cursor: pointer;
+					}
+
+					&:visited {
+						color: #000;
+					}
+				}
 			}
 		}
 	}
@@ -47,5 +54,19 @@
 	.icons {
 		display: flex;
 		gap: 26px;
+
+		.Search,
+		.Login,
+		.Cart {
+			svg {
+				path {
+					transition: all 0.3s ease-in-out;
+				}
+
+				&:hover path {
+					fill: #f6623e;
+				}
+			}
+		}
 	}
 }

@@ -2,8 +2,10 @@ import React from 'react';
 import s from './presentationsection.module.scss';
 import BaseButton from '../BaseButton';
 import Photo from '../../Assets/presentationImage.png';
+import { useNavigate } from 'react-router-dom';
 
 const PresentationSection = () => {
+	const navigate = useNavigate();
 	return (
 		<section className={s.container}>
 			<h1 className={s.presentationTitle}>TAKE CONTROL OF YOUR HEALTH</h1>
@@ -53,7 +55,11 @@ const PresentationSection = () => {
 						Our vitamins are here and ready to boost your mood. New Zealand from
 						local and imported ingredients.
 					</p>
-					<BaseButton value='BROWSE OUR RANGE' className={s.button} />
+					<BaseButton
+						value='BROWSE OUR RANGE'
+						className={s.button}
+						onClick={() => navigate('/catalog')}
+					/>
 				</div>
 			</div>
 		</section>

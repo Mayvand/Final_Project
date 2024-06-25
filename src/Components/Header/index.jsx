@@ -4,13 +4,14 @@ import { ReactComponent as Cart } from '../../Assets/Cart_icon.svg';
 import { ReactComponent as Login } from '../../Assets/Login_icon.svg';
 import { ReactComponent as Search } from '../../Assets/Search_icon.svg';
 import BaseButton from '../BaseButton';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import fetchProducts from '../../Store/Actions/getProducts';
 
 const Header = () => {
 	const { cart } = useSelector(state => state.cart);
 
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -28,16 +29,25 @@ const Header = () => {
 					</div>
 					<nav className={s.nav}>
 						<ul>
-							<li>HOME</li>
-							<li>SHOP</li>
-							<li>FAQ'S</li>
-							<li>CONTACT</li>
+							<li>
+								<Link to={'/'}>HOME</Link>
+							</li>
+							<li>
+								<Link to={'/catalog'}>SHOP</Link>
+							</li>
+							<li>
+								<Link to={'/'}>FAQ'S</Link>
+							</li>
+							<li>
+								<Link to={'/'}>CONTACT</Link>
+							</li>
 						</ul>
 					</nav>
 					<div className={s.icons}>
 						<BaseButton className={s.Search} icon={<Search />} />
 						<BaseButton className={s.Login} icon={<Login />} />
 						<BaseButton
+							onClick={() => navigate('/cart')}
 							className={s.Cart}
 							icon={<Cart />}
 							counter={cart.length}

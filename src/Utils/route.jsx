@@ -3,6 +3,8 @@ import { createBrowserRouter } from 'react-router-dom';
 import Header from '../Components/Header';
 
 const Home = lazy(() => import('../Pages/Home'));
+const Catalog = lazy(() => import('../Pages/Catalog'));
+const Cart = lazy(() => import('../Pages/Cart'));
 
 export const baseRouter = createBrowserRouter([
 	{
@@ -14,6 +16,22 @@ export const baseRouter = createBrowserRouter([
 				element: (
 					<Suspense fallback={<div>Loading...</div>}>
 						<Home />
+					</Suspense>
+				),
+			},
+			{
+				path: '/catalog',
+				element: (
+					<Suspense fallback={<div>Loading...</div>}>
+						<Catalog />
+					</Suspense>
+				),
+			},
+			{
+				path: '/cart',
+				element: (
+					<Suspense fallback={<div>Loading...</div>}>
+						<Cart />
 					</Suspense>
 				),
 			},

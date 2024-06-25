@@ -21,7 +21,7 @@ const Home = () => {
 	console.log(products);
 
 	return (
-		<>
+		<main>
 			{products && (
 				<>
 					<PromoSection />
@@ -32,7 +32,7 @@ const Home = () => {
 					<Footer />
 				</>
 			)}
-		</>
+		</main>
 	);
 };
 

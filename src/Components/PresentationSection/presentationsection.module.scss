@@ -79,6 +79,12 @@
 			line-height: 156%;
 			text-align: center;
 			margin-top: 50px;
+			transition: 0.2s ease-in-out;
+			&:hover {
+				background-color: #f6623e;
+				color: #fff;
+				border-radius: 5px;
+			}
 		}
 	}
 }

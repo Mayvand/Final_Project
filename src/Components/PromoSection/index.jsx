@@ -6,10 +6,11 @@ import AdvantageCard from '../AdvantageCard';
 import { ReactComponent as Shield } from '../../Assets/Advantage1_icon.svg';
 import { ReactComponent as Ecology } from '../../Assets/Advantage2_icon.svg';
 import { ReactComponent as Lab } from '../../Assets/Advantage3_icon.svg';
+import { useNavigate } from 'react-router-dom';
 
 const PromoSection = () => {
 	const { products, loading } = useSelector(state => state.products);
-
+	const navigate = useNavigate();
 	return (
 		<div className={s.container}>
 			{loading && <div style={{ textAlign: 'center' }}>Loading...</div>}
@@ -20,7 +21,11 @@ const PromoSection = () => {
 					<h2 className={s.productTitle}>{products[3].title}</h2>
 					<h2 className={s.productTitle}>{products[3].warrantyInformation}</h2>
 					<p className={s.productDescription}>{products[3].description}</p>
-					<BaseButton className={s.button} value='SHOP NOW' />
+					<BaseButton
+						onClick={() => navigate('/catalog')}
+						className={s.button}
+						value='SHOP NOW'
+					/>
 				</div>
 
 				<div className={s.promoRight}>

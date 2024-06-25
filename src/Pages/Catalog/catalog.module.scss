@@ -1,0 +1,24 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Jost', sans-serif;
+}
+
+.container {
+	h1 {
+		font-weight: 400;
+		font-size: 40px;
+		line-height: 139%;
+		text-align: center;
+	}
+}
+
+.catalogItems {
+	padding: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+	margin: 0 auto;
+	justify-content: space-between;
+}
