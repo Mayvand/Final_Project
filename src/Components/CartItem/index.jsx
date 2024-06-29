@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './cartitem.module.scss';
+import CounterButton from '../CounterButton';
 
 const CartItem = props => {
 	const { item } = props;
@@ -10,16 +11,24 @@ const CartItem = props => {
 				<img src={item.thumbnail} alt='img' />
 			</div>
 			<div className={s.itemInfo}>
-				<h3 className={item.title}>{item.title}</h3>
+				<h3 className={s.title}>{item.title}</h3>
 				<p className={s.warranty}>{item.warrantyInformation}</p>
 				<p className={s.returnPolicy}>{item.returnPolicy}</p>
 			</div>
-			<div className={s.priceBlock}>
-				<p className={s.newPrice}>{item.price + '$'}</p>
-				<p className={s.oldPrice}>
-					{((+item.price * (100 - item.discountPercentage)) / 100).toFixed(2) +
-						'$'}
-				</p>
+
+			<div>
+				<div className={s.priceBlock}>
+					<p className={s.newPrice}>
+						{(
+							(+item.price * (100 - item.discountPercentage) * item.count) /
+							100
+						).toFixed(2) + '$'}
+					</p>
+					<p className={s.oldPrice}>
+						{(item.price * item.count).toFixed(2) + '$'}
+					</p>
+				</div>
+				<CounterButton id={item.id} />
 			</div>
 		</div>
 	);

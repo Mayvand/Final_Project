@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import BaseButton from '../BaseButton';
 import classNames from 'classnames';
 import { cartSlice } from '../../Store/Reducers/cartReducer';
+import CounterButton from '../CounterButton';
 
 const CatalogItem = props => {
 	const { item, link } = props;
@@ -33,11 +34,11 @@ const CatalogItem = props => {
 				{item.title}
 			</h3>
 			<div className={s.priceBlock}>
-				<p className={s.newPrice}>{item.price + '$'}</p>
-				<p className={s.oldPrice}>
+				<p className={s.newPrice}>
 					{((+item.price * (100 - item.discountPercentage)) / 100).toFixed(2) +
 						'$'}
 				</p>
+				<p className={s.oldPrice}>{item.price + '$'}</p>
 			</div>
 
 			{!disable && (
@@ -50,10 +51,8 @@ const CatalogItem = props => {
 					}
 				/>
 			)}
-			{/* 
-            при добавлении количества товаров надо активировать строку
-             {disable && <CounterButton id={item.id} />} 
-             */}
+
+			{disable && <CounterButton id={item.id} />}
 		</div>
 	);
 };
