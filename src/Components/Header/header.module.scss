@@ -17,9 +17,16 @@
 			line-height: 30px;
 			display: flex;
 			align-items: center;
+			transition: all 0.3s ease-in-out;
+
 			span {
 				display: block;
 				font-size: 20px;
+			}
+
+			&:hover {
+				color: #f6623e;
+				cursor: pointer;
 			}
 		}
 	}

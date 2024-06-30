@@ -3,13 +3,16 @@ import BaseButton from '../BaseButton';
 import { cartSlice } from '../../Store/Reducers/cartReducer';
 import s from './counterbutton.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
+import classNames from 'classnames';
 
 const CounterButton = props => {
-	const { id } = props;
+	const { id, className } = props;
 	const { cart } = useSelector(state => state.cart);
 	const dispatch = useDispatch();
 
 	const [counter, setCounter] = useState(1);
+
+	const mainClass = classNames(className, s.button);
 
 	const changeCounter = property => {
 		const { direction, value } = property;
@@ -18,7 +21,7 @@ const CounterButton = props => {
 		} else {
 			if (counter > 1) {
 				setCounter(counter - 1);
-			} else {
+			} else if (counter === 1) {
 				dispatch(cartSlice.actions.removeItem(id));
 			}
 		}
@@ -34,10 +37,10 @@ const CounterButton = props => {
 			const item = cart.find(item => item.id === id);
 			if (item) setCounter(item.count);
 		}
-	}, [cart, id]);
+	}, []);
 
 	useEffect(() => {
-		if (cart && counter > 1) {
+		if (cart && counter > 0) {
 			const item = cart.find(item => item.id === id);
 			if (!item) return;
 			dispatch(cartSlice.actions.changeCartItem({ id, counter }));
@@ -46,7 +49,7 @@ const CounterButton = props => {
 	}, [counter]);
 
 	return (
-		<div className={s.buttonContainer}>
+		<div className={`${s.buttonContainer} ${mainClass}`}>
 			<BaseButton
 				className={`${s.button} ${s.left}`}
 				onClick={() => changeCounter({ direction: false })}

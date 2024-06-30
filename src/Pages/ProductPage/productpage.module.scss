@@ -1,0 +1,139 @@
+.product {
+	padding: 0 120px;
+	* {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+
+	.container {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 40px;
+		gap: 30px;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.25),
+			inset 0px 0px 0px 1px rgba(255, 255, 255, 0.1);
+		border-radius: 10px;
+
+		.back {
+			display: flex;
+			align-items: flex-end;
+			gap: 10px;
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				cursor: pointer;
+				.backButton {
+					svg {
+						path {
+							stroke: #f6623e;
+						}
+					}
+				}
+
+				.backText {
+					color: #f6623e;
+				}
+			}
+
+			.backButton {
+				svg {
+					width: 24px;
+					height: 24px;
+					path {
+						transition: all 0.3s ease-in-out;
+					}
+				}
+			}
+
+			.backText {
+				font-family: 'Jost', sans-serif;
+				font-size: 24px;
+				transition: all 0.3s ease-in-out;
+			}
+		}
+
+		.image {
+			img {
+				width: 700px;
+			}
+		}
+
+		.productInfo {
+			padding: 30px 30px 0 0;
+			.title {
+				font-weight: 600;
+				font-size: 32px;
+			}
+			.priceBlock {
+				margin-top: 20px;
+				display: flex;
+				gap: 15px;
+				align-items: center;
+
+				.newPrice {
+					font-weight: 600;
+					font-size: 28px;
+					line-height: 133%;
+					color: #f6623e;
+				}
+
+				.oldPrice {
+					font-weight: 400;
+					font-size: 22px;
+					line-height: 143%;
+					text-decoration: line-through;
+					color: #828181;
+				}
+
+				.averageRating {
+					font-weight: 600;
+					font-size: 24px;
+					line-height: 133%;
+				}
+			}
+
+			.category {
+				background-color: #f6623e;
+				padding: 10px 20px;
+				font-size: 16px;
+				line-height: 125%;
+				text-transform: uppercase;
+				color: #fff;
+				width: fit-content;
+				border-radius: 10px;
+				margin-top: 20px;
+			}
+
+			.description {
+				font-weight: 400;
+				font-size: 20px;
+				line-height: 145%;
+				margin-top: 20px;
+			}
+
+			.button {
+				background-color: #f6623e;
+				padding: 14px 30px;
+				font-family: 'Jost', sans-serif;
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 125%;
+				text-transform: uppercase;
+				color: #fff;
+				width: 100%;
+				border-radius: 20px;
+				margin-top: 15px;
+			}
+
+			.counterButton {
+				justify-content: flex-start;
+				padding: 4px 0;
+			}
+		}
+	}
+}

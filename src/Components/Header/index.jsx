@@ -23,7 +23,7 @@ const Header = () => {
 			<header className={s.header}>
 				<div className={s.container}>
 					<div className={s.logo}>
-						<h1 className={s.logoText}>
+						<h1 className={s.logoText} onClick={() => navigate(`/`)}>
 							GOOD<span>4</span>ME.
 						</h1>
 					</div>

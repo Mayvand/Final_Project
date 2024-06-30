@@ -3,9 +3,11 @@ import s from './catalog.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import fetchProducts from '../../Store/Actions/getProducts';
 import CatalogItem from '../../Components/CatalogItem';
+import { useNavigate } from 'react-router-dom';
 
 const Catalog = () => {
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		dispatch(fetchProducts());
@@ -21,7 +23,12 @@ const Catalog = () => {
 				<div className={s.catalogItems}>
 					{products &&
 						products.map(item => (
-							<CatalogItem item={item} key={item.id} className={s.item} />
+							<CatalogItem
+								item={item}
+								key={item.id}
+								className={s.item}
+								link={() => navigate(`/catalog/${item.id}`)}
+							/>
 						))}
 				</div>
 			</section>
