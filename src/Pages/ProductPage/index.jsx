@@ -7,6 +7,7 @@ import BaseButton from '../../Components/BaseButton';
 import CounterButton from '../../Components/CounterButton';
 import { cartSlice } from '../../Store/Reducers/cartReducer';
 import { ReactComponent as Arrow } from '../../Assets/Arrow_icon.svg';
+import Reviews from '../../Components/Reviews';
 
 const ProductPage = () => {
 	const { products, loading } = useSelector(state => state.products);
@@ -54,6 +55,8 @@ const ProductPage = () => {
 								).toFixed(2) + ' $'}
 							</p>
 							<p className={s.oldPrice}>{product.price + ' $'}</p>
+						</div>
+						<div className={s.rating}>
 							<Rating
 								value={product.rating}
 								readOnly
@@ -77,6 +80,8 @@ const ProductPage = () => {
 						{flag && (
 							<CounterButton className={s.counterButton} id={product.id} />
 						)}
+
+						<Reviews reviews={product.reviews} />
 					</div>
 				</div>
 			)}

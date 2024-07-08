@@ -25,16 +25,14 @@ const ProductSlider = () => {
 	return (
 		<>
 			<Swiper
-				direction={'vertical'}
-				slidesPerView={1}
-				spaceBetween={30}
-				mousewheel={true}
-				pagination={pagination}
-				modules={[Mousewheel, Pagination]}
+				pagination={{
+					dynamicBullets: true,
+				}}
+				modules={[Pagination]}
 				className={s.swiper}
 			>
 				{products.map((slide, index) => (
-					<SwiperSlide>
+					<SwiperSlide className={s.swiperSlide}>
 						<ProductSliderItem
 							key={index}
 							image={slide.thumbnail}

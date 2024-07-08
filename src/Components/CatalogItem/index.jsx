@@ -43,7 +43,7 @@ const CatalogItem = props => {
 
 			{!disable && (
 				<BaseButton
-					className={classNames(s.button, disable ? s.buttonDis : '')}
+					className={classNames(s.buttonProduct, s.button)}
 					disabled={disable}
 					value={disable ? 'Added' : 'Add to cart'}
 					onClick={() =>
@@ -52,7 +52,7 @@ const CatalogItem = props => {
 				/>
 			)}
 
-			{disable && <CounterButton id={item.id} />}
+			{disable && <CounterButton id={item.id} className={s.buttonProduct} />}
 		</div>
 	);
 };

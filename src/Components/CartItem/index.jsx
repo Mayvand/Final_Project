@@ -1,17 +1,20 @@
 import React from 'react';
 import s from './cartitem.module.scss';
 import CounterButton from '../CounterButton';
+import { useNavigate } from 'react-router-dom';
 
 const CartItem = props => {
-	const { item } = props;
+	const { item, link } = props;
 
 	return (
 		<div className={s.item}>
-			<div className={s.image}>
+			<div className={s.image} onClick={link}>
 				<img src={item.thumbnail} alt='img' />
 			</div>
 			<div className={s.itemInfo}>
-				<h3 className={s.title}>{item.title}</h3>
+				<h3 className={s.title} onClick={link}>
+					{item.title}
+				</h3>
 				<p className={s.warranty}>{item.warrantyInformation}</p>
 				<p className={s.returnPolicy}>{item.returnPolicy}</p>
 			</div>

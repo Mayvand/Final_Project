@@ -7,11 +7,19 @@
 	margin-bottom: 20px;
 	padding: 0 20px;
 
+	.image:hover {
+		cursor: pointer;
+	}
+
 	.itemInfo {
 		padding: 0 30px;
 		flex: 2;
 		.title {
-			color: #f6623e;
+			transition: all 0.3s ease-in-out;
+			&:hover {
+				cursor: pointer;
+				color: #f6623e;
+			}
 		}
 	}
 

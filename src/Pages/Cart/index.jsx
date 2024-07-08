@@ -5,12 +5,25 @@ import BaseButton from '../../Components/BaseButton';
 import CartItem from '../../Components/CartItem';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { createPortal } from 'react-dom';
+import SendModal from '../../Components/SendModal';
 
 const Cart = () => {
 	const { cart } = useSelector(state => state.cart);
 	const navigate = useNavigate();
 	const [totalPrice, setTotalPrice] = useState(0);
 	const [discount, setDiscount] = useState(0);
+
+	const [modal, setModal] = useState(false);
+
+	const sendCartData = formValue => {
+		const data = {
+			user: formValue,
+			cart,
+		};
+
+		localStorage.setItem(data.user.name, JSON.stringify(data));
+	};
 
 	useEffect(() => {
 		if (cart.length) {
@@ -51,7 +64,11 @@ const Cart = () => {
 					<>
 						<div className={s.cartItems}>
 							{cart.map(item => (
-								<CartItem item={item} className={s.cartItem} />
+								<CartItem
+									item={item}
+									className={s.cartItem}
+									link={() => navigate(`/catalog/${item.id}`)}
+								/>
 							))}
 						</div>
 						<div className={s.totalBlock}>
@@ -69,11 +86,19 @@ const Cart = () => {
 							</div>
 							<BaseButton
 								className={s.openModal}
-								// onClick={() => setModal(true)} активировать когда добавишь модалку + обратную связь
+								onClick={() => setModal(true)}
 								value={'order products'}
 							/>
 						</div>
 					</>
+				)}
+				{createPortal(
+					<SendModal
+						open={modal}
+						setOpen={setModal}
+						setFormData={sendCartData}
+					/>,
+					document.body
 				)}
 			</section>
 		</main>

@@ -2,6 +2,7 @@
 	width: 900px;
 	overflow: hidden;
 	position: relative;
+	margin: 0 auto;
 }
 .wrapper {
 	img {
@@ -40,5 +41,23 @@
 	background-color: #f6623e;
 	* {
 		fill: #fff;
+	}
+}
+
+@media screen and (max-width: 1800px) {
+	.sliderWrapper {
+		width: 700px;
+	}
+}
+
+@media screen and (max-width: 1700px) {
+	.sliderWrapper {
+		width: 430px;
+	}
+}
+
+@media screen and (max-width: 690px) {
+	.sliderWrapper {
+		width: 219px;
 	}
 }

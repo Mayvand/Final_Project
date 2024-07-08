@@ -9,6 +9,10 @@
 		box-shadow: 0px 0px 20px 11px rgba(129, 129, 129, 0.149),
 			0 10px 10px 0px rgba(129, 129, 129, 0.149);
 	}
+
+	.img:hover {
+		cursor: pointer;
+	}
 }
 
 .categoryBlock {
@@ -35,6 +39,12 @@
 	letter-spacing: 0.06em;
 	text-align: center;
 	min-height: 55px;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		color: #f6623e;
+	}
 }
 
 .priceBlock {
@@ -69,5 +79,46 @@
 	color: #fff;
 	width: 100%;
 	border-radius: 20px;
+}
+
+.buttonProduct {
 	margin-top: 15px;
+}
+
+@media screen and (max-width: 900px) {
+	.mainClass {
+		max-width: 280px;
+		.categoryBlock {
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			gap: 15px;
+			margin-bottom: 0;
+		}
+		.img {
+			width: 240px;
+			margin: 0 auto;
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 435px) {
+	.mainClass {
+		.img {
+			width: 170px;
+		}
+		.title {
+			font-size: 18px;
+		}
+
+		.priceBlock {
+			.newPrice,
+			.oldPrice {
+				font-size: 18px;
+			}
+		}
+	}
 }

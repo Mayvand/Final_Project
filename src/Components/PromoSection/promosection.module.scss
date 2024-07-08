@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 .promoSection {
+	max-width: 1920px;
+	margin: 0 auto;
 	padding: 209px 175px;
-
 	background-color: #fff8f6;
 	border-radius: 0 0 200px 200px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	gap: 300px;
+	box-sizing: border-box;
 }
 
 .shopName {
@@ -78,5 +80,101 @@
 		display: flex;
 		justify-content: center;
 		gap: 55px;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.productTitle {
+		font-size: 40px;
+	}
+
+	.productDescription {
+		font-size: 16px;
+	}
+
+	.advantages {
+		.words ul {
+			max-width: 800px;
+			li {
+				font-size: 24px;
+			}
+		}
+		.advantagesTitle {
+			font-size: 32px;
+			margin: 60px auto;
+		}
+	}
+}
+
+@media screen and (max-width: 1152px) {
+	.promoSection {
+		gap: 100px;
+	}
+
+	.advantages {
+		.cards {
+			gap: 30px;
+			flex-wrap: wrap;
+		}
+	}
+}
+
+@media screen and (max-width: 1152px) {
+	.promoSection {
+		gap: 30px;
+		padding: 100px 100px;
+
+		.productTitle {
+			font-size: 28px;
+		}
+
+		.productDescription {
+			font-size: 14px;
+			margin-top: 20px;
+		}
+
+		.promoRight {
+			img {
+				width: 150px;
+			}
+		}
+	}
+
+	.advantages {
+		margin-top: 40px;
+		padding: 0 60px;
+
+		.words ul {
+			max-width: 400px;
+			flex-wrap: wrap;
+			gap: 30px;
+			justify-content: center;
+
+			li {
+				font-size: 16px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.promoSection {
+		flex-direction: column;
+		border-radius: 0 0 50px 50px;
+		text-align: center;
+
+		.button {
+			display: block;
+			margin: 30px auto;
+		}
+
+		.promoRight {
+			order: -1;
+		}
+	}
+	.advantages {
+		.advantagesTitle {
+			font-size: 20px;
+		}
 	}
 }

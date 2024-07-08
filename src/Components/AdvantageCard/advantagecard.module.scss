@@ -52,3 +52,30 @@
 		}
 	}
 }
+
+@media screen and (max-width: 800px) {
+	.cardContainer {
+		padding: 33px 15px 20px 15px;
+
+		.imgContainer {
+			width: 60px;
+			height: 60px;
+
+			svg {
+				width: 40px;
+				height: 40px;
+			}
+		}
+
+		.textContainer {
+			margin-top: 15px;
+			h1 {
+				font-size: 22px;
+			}
+			p {
+				font-size: 10px;
+				max-width: 220px;
+			}
+		}
+	}
+}

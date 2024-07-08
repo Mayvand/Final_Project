@@ -58,7 +58,7 @@ const Footer = () => {
 					Urya
 				</div>
 				<div className={s.payIcons}>
-					<img src={Pay} />
+					<img src={Pay} alt='pay' />
 				</div>
 			</div>
 		</footer>

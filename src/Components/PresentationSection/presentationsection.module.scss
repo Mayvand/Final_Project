@@ -8,10 +8,11 @@
 
 .presentationTitle {
 	max-width: 410px;
-	margin-left: 1193px;
+	margin: 0 auto;
 	font-weight: 700;
 	font-size: 56px;
 	line-height: 146%;
+	transform: translateX(85%);
 }
 
 .mainBlock {
@@ -40,7 +41,7 @@
 	.textBlock {
 		padding: 132px 0;
 		display: grid;
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
 		gap: 73px;
 
 		div {
@@ -69,6 +70,7 @@
 			line-height: 150%;
 			color: #828181;
 			margin-bottom: 30px;
+			max-width: 366px;
 		}
 
 		.button {
@@ -84,6 +86,149 @@
 				background-color: #f6623e;
 				color: #fff;
 				border-radius: 5px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1920px) {
+	.container {
+		.mainBlock {
+			gap: 30px;
+		}
+	}
+}
+
+@media screen and (max-width: 1800px) {
+	.container {
+		.mainBlock {
+			.textBlock {
+				gap: 30px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1700px) {
+	.container {
+		.mainBlock {
+			.textBlock {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1380px) {
+	.container {
+		.mainBlock {
+			.textBlock {
+				padding: 80px 0 0 0;
+			}
+			.imageBlock {
+				img {
+					width: 350px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1230px) {
+	.container {
+		.mainBlock {
+			padding: 0 60px;
+			.button {
+				padding: 16px;
+				display: block;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.container {
+		.presentationTitle {
+			font-size: 32px;
+			transform: translateX(0);
+			margin-left: auto;
+			margin-right: 80px;
+			max-width: 350px;
+		}
+		.mainBlock {
+			flex-wrap: wrap;
+
+			.textBlock {
+				padding: 0;
+			}
+
+			.descriptionBlock {
+				padding: 40px;
+				background-color: #ffffff;
+				border-radius: 30px;
+			}
+
+			.backgroundBlock {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.container {
+		margin-top: 100px;
+		.presentationTitle {
+			text-align: center;
+			margin: 0 auto;
+		}
+		.mainBlock {
+			.backgroundBlock {
+				background: #fff8f6;
+				top: -150px;
+				height: 120%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.container {
+		.mainBlock {
+			.imageBlock {
+				img {
+					width: 90%;
+					margin: 0 auto;
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.container {
+		.presentationTitle {
+			padding: 0 60px;
+			font-size: 24px;
+		}
+		.mainBlock {
+			.textBlock {
+				text-align: center;
+				h3 {
+					font-size: 18px;
+				}
+
+				p {
+					font-size: 12px;
+				}
+			}
+
+			.descriptionBlock {
+				p {
+					font-size: 16px;
+				}
 			}
 		}
 	}
