@@ -1,9 +1,12 @@
 import React from 'react';
 import s from './productslideritem.module.scss';
 import BaseButton from '../BaseButton';
+import { useNavigate } from 'react-router-dom';
 
 const ProductSliderItem = props => {
-	const { image, title, price, discount, description } = props;
+	const { image, title, price, discount, description, id } = props;
+
+	const navigate = useNavigate();
 
 	return (
 		<div className={s.itemWrapper}>
@@ -19,7 +22,11 @@ const ProductSliderItem = props => {
 					<span className={s.oldPrice}>{price + ' $'}</span>
 				</div>
 				<p className={s.description}>{description}</p>
-				<BaseButton className={s.sliderButton} value='SHOP NOW' />
+				<BaseButton
+					className={s.sliderButton}
+					value='SHOP NOW'
+					onClick={() => navigate(`/catalog/${id}`)}
+				/>
 			</div>
 		</div>
 	);

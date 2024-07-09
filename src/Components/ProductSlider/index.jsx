@@ -40,6 +40,7 @@ const ProductSlider = () => {
 							price={slide.price}
 							discount={slide.discountPercentage}
 							description={slide.description}
+							id = {slide.id}
 						/>
 					</SwiperSlide>
 				))}
