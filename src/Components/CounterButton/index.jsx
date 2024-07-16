@@ -16,13 +16,15 @@ const CounterButton = props => {
 
 	const changeCounter = property => {
 		const { direction, value } = property;
+		console.log(value);
 		if (direction) {
 			setCounter(counter + 1);
-		} else {
+		} else if (direction === false) {
 			if (counter > 1) {
 				setCounter(counter - 1);
 			} else if (counter === 1) {
 				dispatch(cartSlice.actions.removeItem(id));
+				console.log('удаляю' + id);
 			}
 		}
 		if (!isNaN(+value)) {
@@ -45,7 +47,6 @@ const CounterButton = props => {
 			if (!item) return;
 			dispatch(cartSlice.actions.changeCartItem({ id, counter }));
 		}
-		console.log(cart[id - 1]);
 	}, [counter]);
 
 	return (

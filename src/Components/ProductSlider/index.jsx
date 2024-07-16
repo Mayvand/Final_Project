@@ -27,6 +27,7 @@ const ProductSlider = () => {
 			<Swiper
 				pagination={{
 					dynamicBullets: true,
+					clickable: true,
 				}}
 				modules={[Pagination]}
 				className={s.swiper}
@@ -40,7 +41,7 @@ const ProductSlider = () => {
 							price={slide.price}
 							discount={slide.discountPercentage}
 							description={slide.description}
-							id = {slide.id}
+							id={slide.id}
 						/>
 					</SwiperSlide>
 				))}
